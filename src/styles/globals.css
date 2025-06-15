@@ -1,42 +1,263 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+    --text-50: #ecf2f9;
+    --text-100: #d8e5f3;
+    --text-200: #b1cae7;
+    --text-300: #8bb0da;
+    --text-400: #6495ce;
+    --text-500: #3d7bc2;
+    --text-600: #31629b;
+    --text-700: #254a74;
+    --text-800: #18314e;
+    --text-900: #0c1927;
+    --text-950: #060c13;
+
+    --background-50: #ecf1f9;
+    --background-100: #d9e3f2;
+    --background-200: #b3c8e6;
+    --background-300: #8cacd9;
+    --background-400: #6690cc;
+    --background-500: #4075bf;
+    --background-600: #335d99;
+    --background-700: #264673;
+    --background-800: #192f4d;
+    --background-900: #0d1726;
+    --background-950: #060c13;
+
+    --primary-50: #e5f0ff;
+    --primary-100: #cce0ff;
+    --primary-200: #99c2ff;
+    --primary-300: #66a3ff;
+    --primary-400: #3385ff;
+    --primary-500: #0066ff;
+    --primary-600: #0052cc;
+    --primary-700: #003d99;
+    --primary-800: #002966;
+    --primary-900: #001433;
+    --primary-950: #000a1a;
+
+    --secondary-50: #f7ecf9;
+    --secondary-100: #f0d8f3;
+    --secondary-200: #e0b1e7;
+    --secondary-300: #d18bda;
+    --secondary-400: #c264ce;
+    --secondary-500: #b23dc2;
+    --secondary-600: #8f319b;
+    --secondary-700: #6b2574;
+    --secondary-800: #47184e;
+    --secondary-900: #240c27;
+    --secondary-950: #120613;
+
+    --accent-50: #f9ecf5;
+    --accent-100: #f3d8ea;
+    --accent-200: #e7b1d6;
+    --accent-300: #da8bc1;
+    --accent-400: #ce64ac;
+    --accent-500: #c23d98;
+    --accent-600: #9b3179;
+    --accent-700: #74255b;
+    --accent-800: #4e183d;
+    --accent-900: #270c1e;
+    --accent-950: #13060f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*{
+    transition: 0.2s ease-in-out 0s;
+    font-family: "Arial Black", serif;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 10px;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+    background-color: var(--background-100);
+    color: var(--text-50);
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/*-------------------------------------------------*/
+
+nav{
+    background-color: var(--primary-500);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+nav button{
+    height: 50px;
+    width: 220px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background-color: var(--accent-400);
+    cursor: pointer;
+    font-size: larger;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+nav button:hover{
+    background-color: var(--accent-600);
+    border: none;
+    outline: none;
 }
+
+nav button a{
+    text-decoration: none;
+    color: var(--accent-50);
+    font-size: medium;
+}
+
+.heroSection{
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroSection div{
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-900);
+}
+
+.heroTextSide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.heroTextSide button{
+    background-color: var(--primary-500);
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.heroTextSide button a{
+    color: var(--text-100) !important;
+    text-decoration: none !important;
+}
+
+.heroTextSide button:nth-of-type(2){
+    background-color: var(--accent-200) !important;
+}
+.heroTextSide button:nth-of-type(2) a{
+    color: var(--text-900) !important;
+}
+
+.heroTextSide button:hover{
+    background-color: var(--primary-700) !important;
+}
+
+.heroTextSide button:nth-of-type(2):hover{
+    background-color: var(--accent-100) !important;
+}
+
+.heroSection img {
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.heroTextSide button:hover {
+    box-shadow: 0 0 10px var(--primary-500);
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+.heroTextSide button:nth-of-type(2):hover {
+    box-shadow: 0 0 10px var(--accent-200);
+}
+
+@media (max-width: 768px) {
+    .heroSection div {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .heroTextSide {
+        align-items: center;
+    }
+
+    .heroTextSide button {
+        width: 100%;
+    }
+}
+
+/*-------------------------------------------------*/
+
+.functionSection {
+    padding: 80px 20px;
+    background-color: var(--background-100);
+    text-align: center;
+}
+
+.functionSection h2 {
+    font-size: 2rem;
+    color: var(--text-900);
+    margin-bottom: 40px;
+}
+
+.functionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.functionCard {
+    background-color: var(--background-300);
+    color: var(--text-100);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.functionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.functionCard h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--primary-400);
+}
+
+.functionCard p {
+    font-size: 1rem;
+    color: var(--text-50);
+}
+
