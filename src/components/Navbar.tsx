@@ -9,6 +9,6 @@ export default function Navbar() {
             <Image src={"/icon.png"} alt={"Logo"} height={80} width={80}/>
             <h1>TypeBot</h1>
         </div>
-        <button><FaGithub /><a href="https://github.com/PsydoV2/TypeBot" target={"_blank"}>View Sourcecode</a></button>
+        <button onClick={() => window.open("https://github.com/PsydoV2/TypeBot", "_blank")} id="gitBtnSmall"> <FaGithub /></button>
     </nav>
 }
